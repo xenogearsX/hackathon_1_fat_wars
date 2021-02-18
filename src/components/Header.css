@@ -1,0 +1,17 @@
+ul{
+    display: flex;
+	justify-content: flex-end;
+	list-style-type: none;
+	margin: 0px;
+	padding: 12px;
+	background-color:#FF2525;
+
+}
+
+
+li .nav {
+  height: 100px;
+  display: flex;
+  justify-content: row;
+  
+}
