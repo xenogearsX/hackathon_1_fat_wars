@@ -1,10 +1,13 @@
 import React, {useState, useEffect, useImperativeHandle} from 'react';
-import './Match.css'
 import axios from 'axios'
+
 import Selection from './Selection'
+
+import './Match.css'
 
 function Match() {
     const [persos, setPersos] = useState([])
+    const [filterPerso, setFilterPerso] = useState('')
     const [hair, setHair] = useState('')
     const [species, setSpecies] = useState('')
     const [eye, setEye] = useState('')
@@ -13,14 +16,31 @@ function Match() {
         axios.get('https://miadil.github.io/starwars-api/api/all.json')
             .then((res) => setPersos(res.data))
     }, []);
-    
-    // const tmp = 
-    
+
+    useEffect(() => {
+        setFilterPerso(persos.filter(perso => perso.hairColor === hair))
+        console.log(filterPerso.filter(perso => perso.hairColor === hair))
+    }, [hair, species, eye]);
+
+    const handleChoice = (e, choice) => {
+        if (choice === 'hair'){
+            setHair(e.target.value) 
+        } else if (choice === 'eye'){
+            setEye(e.target.value)
+        } else if (choice === 'species'){
+            setSpecies(e.target.value)
+        } 
+        console.log(filterPerso)
+
+        // if( hair !== '' && eye !== '' && species !== '') {
+
+        // }
+    }
     return (
         <div>
             <h1> Quels sont tes matchs dans la galaxie ?</h1>
        
-           <select name="hairColor" id="hair-select" onChange={(e) => setHair(e.target.value)}>
+           <select name="hairColor" id="hair-select" onChange={(e) =>  handleChoice(e, 'hair') }>
         <option value="">--Please choose an option--</option>
         <option value="black">Black</option>
         <option value="black  later with flecks of gray">black  later with flecks of gray</option>
@@ -36,7 +56,7 @@ function Match() {
         <option value="red later gray">Red, later gray</option>
     </select>
 
-    <select name="Eye color" id="eye-color" onChange={(e) => setEye(e.target.value)}>
+    <select name="Eye color" id="eye-color" onChange={(e) => handleChoice(e, 'eye')}>
         <option value="">--Please choose an option--</option>
         <option value="blue">blue</option>
         <option value="red">red</option>
@@ -52,7 +72,7 @@ function Match() {
         <option value="white">white</option>
     </select>
 
-    <select name="speciesName" id="species" onChange={(e) => setSpecies(e.target.value)}>
+    <select name="speciesName" id="species" onChange={(e) => handleChoice(e, 'species')}>
         <option value="">--Please choose an option--</option>
         <option value="human">Human</option>
         <option value="droid">Droid</option>
@@ -70,18 +90,20 @@ function Match() {
         <option value="dathomirian zabrak">dathomirian zabrak</option>
         <option value="twi'lek">Twi'lek</option>
     </select>
-    <p>Hair Color</p>
+{/*       
+    const [hair, setHair] = useState('')
+    const [species, setSpecies] = useState('')
+    const [eye, setEye] = useState('') */}
+        {/* {
+            hair ? persos.filter(perso => perso.hairColor === hair).map(perso =>  <div>{perso.name}</div>) : 'select the hair' 
+        } */}
+    {/* {persos.filter(perso => perso.hairColor === hair).filter(perso => perso.eyeColor === eye)
+    .map(perso => <div key={perso.id}>{perso.name}</div>)} */}
 
-    <p>Eye color</p>    
-    {/* {persos.filter(((perso)=>perso.eyeColor === eye) || ((perso)=>perso.hairColor === hair)).map((perso) => <div key={perso.id}>{perso.name}</div>)} */}
-    <p>Species</p>
-    {
-       persos.filter(perso =>).map(item => item.name)
-    }
-    
-    <div> 
-    
-    </div>
+    {/* {hair !== ' ' ? persos.filter(perso => perso.hairColor === hair)
+    .map(perso => <div key={perso.id}>{perso.name}</div>) 
+    : hair == false ? persos.map(perso => (<div  key={perso.id}>{perso.name}</div>)): 'ok' } */}
+   
        </div> 
     )
 }

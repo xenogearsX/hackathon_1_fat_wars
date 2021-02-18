@@ -17,7 +17,7 @@ const Selection= () =>{
         <option value="white">White</option>
         <option value="gold">Gold</option>
         <option value="red later gray">Red, later gray</option>
-    </select>
+ .   </select>
     <select name="Eye color" id="eye-color">
         <option value="">--Please choose an option--</option>
         <option value="blue">blue</option>
