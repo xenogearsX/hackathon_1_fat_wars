@@ -15,3 +15,16 @@ li .nav {
   justify-content: row;
   
 }
+.nav{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    text-decoration: none;
+    color: #030202;
+    font-size: 25px;
+}
+#logo{
+    width: 100%;
+}
