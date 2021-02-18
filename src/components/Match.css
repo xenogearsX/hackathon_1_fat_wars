@@ -1,0 +1,8 @@
+
+
+/* 
+const cheveux = (array =>array.filter(perso=>perso.cheveux===selectcheveux.value))
+const poids = (array => array.filter(perso=>perso.poids < 100))
+cheveux(poids(taille()))
+.filter((perso)=>perso.height>180) */
+

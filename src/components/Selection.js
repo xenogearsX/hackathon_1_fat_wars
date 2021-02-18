@@ -1,26 +1,9 @@
-import React, {useState, useEffect, useImperativeHandle} from 'react';
-import './Match.css'
-import axios from 'axios'
-import Selection from './Selection'
+import React from 'react'
 
-function Match() {
-    const [persos, setPersos] = useState([])
-    const [hair, setHair] = useState('')
-    const [species, setSpecies] = useState('')
-    const [eye, setEye] = useState('')
-    
-    useEffect(() => {
-        axios.get('https://miadil.github.io/starwars-api/api/all.json')
-            .then((res) => setPersos(res.data))
-    }, []);
-    
-    // const tmp = 
-    
-    return (
+const Selection= () =>{
+    return(
         <div>
-            <h1> Quels sont tes matchs dans la galaxie ?</h1>
-       
-           <select name="hairColor" id="hair-select" onChange={(e) => setHair(e.target.value)}>
+            <select name="hair color" id="hair-select">
         <option value="">--Please choose an option--</option>
         <option value="black">Black</option>
         <option value="black  later with flecks of gray">black  later with flecks of gray</option>
@@ -35,8 +18,7 @@ function Match() {
         <option value="gold">Gold</option>
         <option value="red later gray">Red, later gray</option>
     </select>
-
-    <select name="Eye color" id="eye-color" onChange={(e) => setEye(e.target.value)}>
+    <select name="Eye color" id="eye-color">
         <option value="">--Please choose an option--</option>
         <option value="blue">blue</option>
         <option value="red">red</option>
@@ -52,7 +34,7 @@ function Match() {
         <option value="white">white</option>
     </select>
 
-    <select name="speciesName" id="species" onChange={(e) => setSpecies(e.target.value)}>
+    <select name="species" id="species">
         <option value="">--Please choose an option--</option>
         <option value="human">Human</option>
         <option value="droid">Droid</option>
@@ -70,20 +52,9 @@ function Match() {
         <option value="dathomirian zabrak">dathomirian zabrak</option>
         <option value="twi'lek">Twi'lek</option>
     </select>
-    <p>Hair Color</p>
-
-    <p>Eye color</p>    
-    {/* {persos.filter(((perso)=>perso.eyeColor === eye) || ((perso)=>perso.hairColor === hair)).map((perso) => <div key={perso.id}>{perso.name}</div>)} */}
-    <p>Species</p>
-    {
-       persos.filter(perso =>).map(item => item.name)
-    }
-    
-    <div> 
-    
     </div>
-       </div> 
     )
-}
+    
 
-export default Match;
+}
+export default Selection;
