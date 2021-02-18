@@ -1,5 +1,7 @@
 import React from "react";
 
+import abdou from '../darkabdou.jpg'
+
 class Timer extends React.Component {
   state = {
     counter1: null,
@@ -31,7 +33,7 @@ class Timer extends React.Component {
       <div className="timer">
         <div id="bip" className="compteur">
           {this.state.counter1 === 0
-            ? "May the force be with you !"
+            ? <div><img src={abdou} /><h1>You did it !</h1></div>
             : this.state.counter1
             ? this.state.counter1 >= 60
               ? Math.trunc(this.state.counter1 / 60) +
