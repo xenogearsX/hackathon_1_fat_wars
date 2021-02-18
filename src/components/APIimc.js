@@ -24,7 +24,7 @@ class APIimc extends React.Component {
         10000
       ).toFixed(2),
     });
-    this.setState({
+    await this.setState({
       category:
         this.state.IMC <= 18.5
           ? 0
@@ -38,8 +38,46 @@ class APIimc extends React.Component {
           ? 4
           : 5,
     });
+    this.test();
   };
-
+  test = () =>
+    this.state.category
+      ? this.state.category === 0
+        ? this.setState({
+            random: this.state.IMC0[
+              this.getRandom(0, this.state.IMC0.length - 1)
+            ],
+          })
+        : this.state.category === 1
+        ? this.setState({
+            random: this.state.IMC1[
+              this.getRandom(0, this.state.IMC1.length - 1)
+            ],
+          })
+        : this.state.category === 2
+        ? this.setState({
+            random: this.state.IMC2[
+              this.getRandom(0, this.state.IMC2.length - 1)
+            ],
+          })
+        : this.state.category === 3
+        ? this.setState({
+            random: this.state.IMC3[
+              this.getRandom(0, this.state.IMC3.length - 1)
+            ],
+          })
+        : this.state.category === 4
+        ? this.setState({
+            random: this.state.IMC4[
+              this.getRandom(0, this.state.IMC4.length - 1)
+            ],
+          })
+        : this.setState({
+            random: this.state.IMC5[
+              this.getRandom(0, this.state.IMC5.length - 1)
+            ],
+          })
+      : null;
   getRandom = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -53,7 +91,6 @@ class APIimc extends React.Component {
     await this.setState({ userTaille: e.target.value });
     this.handleIMC();
   };
-
 
   componentDidMount() {
     axios
@@ -109,51 +146,7 @@ class APIimc extends React.Component {
           onChange={this.handlePoids}
         />
         <p>IMC : {this.state.IMC}</p>
-        {this.state.category ? (
-          this.state.category === 0 ? (
-            <img
-              src={
-                this.state.IMC0[this.getRandom(0, this.state.IMC0.length - 1)]
-                  .image
-              }
-            />
-          ) : this.state.category === 1 ? (
-            <img
-              src={
-                this.state.IMC1[this.getRandom(0, this.state.IMC1.length - 1)]
-                  .image
-              }
-            />
-          ) : this.state.category === 2 ? (
-            <img
-              src={
-                this.state.IMC2[this.getRandom(0, this.state.IMC2.length - 1)]
-                  .image
-              }
-            />
-          ) : this.state.category === 3 ? (
-            <img
-              src={
-                this.state.IMC3[this.getRandom(0, this.state.IMC3.length - 1)]
-                  .image
-              }
-            />
-          ) : this.state.category === 4 ? (
-            <img
-              src={
-                this.state.IMC4[this.getRandom(0, this.state.IMC4.length - 1)]
-                  .image
-              }
-            />
-          ) : (
-            <img
-              src={
-                this.state.IMC5[this.getRandom(0, this.state.IMC5.length - 1)]
-                  .image
-              }
-            />
-          )
-        ) : null}
+        {this.state.random? <div><img src={this.state.random.image} alt={this.state.random.name}/><p>{this.state.random.name}</p></div> : null}
       </div>
     );
   }
