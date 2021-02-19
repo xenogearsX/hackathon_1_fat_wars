@@ -10,7 +10,12 @@ import './GlobalCard.css'
                 <div className='name'>{name}</div>
                 <div className='name'>{height}</div>
                 <div className='name'>{homeworld}</div>
+<<<<<<< HEAD
                 <div className='name'>{species}</div> 
+=======
+                <div className='name'>{species}</div>
+                
+>>>>>>> globalcard
             </div>
             </Link>
         )
