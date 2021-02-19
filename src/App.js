@@ -1,8 +1,11 @@
+import React from 'react'
 import './App.css';
 import {Switch, Route} from 'react-router-dom'
 import Match from './components/Match'
 import Home from './screen/Home'
 import Header from './components/Header'
+import APIimc from './components/APIimc.js';
+
 
 function App() {
   return (
