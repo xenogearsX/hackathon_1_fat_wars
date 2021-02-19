@@ -5,6 +5,7 @@ import Match from './components/Match'
 import Home from './screen/Home'
 import Header from './components/Header'
 import APIimc from './components/APIimc.js';
+import Timer from './components/Timer';
 
 
 function App() {
