@@ -1,8 +1,12 @@
-
-
-/* 
-const cheveux = (array =>array.filter(perso=>perso.cheveux===selectcheveux.value))
-const poids = (array => array.filter(perso=>perso.poids < 100))
-cheveux(poids(taille()))
-.filter((perso)=>perso.height>180) */
-
+.div-match {
+    background-color: #FFE53B;
+background: linear-gradient(147deg, #FFE53B 0%, #FF2525 41%, #030202 90%);
+}
+.menu-select {
+    background-color: hsl(45, 2%, 59%);
+    background: hsl(244, 41%, 15%);
+    border: solid 2px grey;
+    color: white;
+    padding: 6px;
+    margin: 6px;
+}

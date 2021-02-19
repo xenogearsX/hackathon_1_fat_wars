@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useImperativeHandle } from "react"
 import axios from "axios"
 
+
 import Selection from "./Selection"
 
 import "./Match.css"
@@ -61,15 +62,17 @@ function Match() {
 		console.log(filterPerso)
 	}
 	return (
-		<div>
+		<div className="div-match">
 			<h1> Quels sont tes matchs dans la galaxie ?</h1>
+		
 
 			<select
+				className="menu-select"
 				name="hairColor"
 				id="hair-select"
 				onChange={(e) => handleChoice(e, "hair")}
 			>
-				<option value="">--Please choose an option--</option>
+				<option value="">Quelle couleur de cheveux te fait craquer ? </option>
 				<option value="black">Black</option>
 				<option value="black  later with flecks of gray">
 					black later with flecks of gray
@@ -87,11 +90,12 @@ function Match() {
 			</select>
 
 			<select
+				className="menu-select"
 				name="Eye color"
 				id="eye-color"
 				onChange={(e) => handleChoice(e, "eye")}
 			>
-				<option value="">--Please choose an option--</option>
+				<option value="">Quelle est la couleur d'yeux qui te fait fondre ?</option>
 				<option value="blue">blue</option>
 				<option value="red">red</option>
 				<option value="brown">brown</option>
@@ -107,11 +111,12 @@ function Match() {
 			</select>
 
 			<select
+				className="menu-select"
 				name="speciesName"
 				id="species"
 				onChange={(e) => handleChoice(e, "species")}
 			>
-				<option value="">--Please choose an option--</option>
+				<option value="">Une préférence d'espèce ? </option>
 				<option value="human">Human</option>
 				<option value="droid">Droid</option>
 				<option value="wookiee">Wookiee</option>
