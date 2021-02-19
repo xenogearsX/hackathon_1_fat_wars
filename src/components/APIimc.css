@@ -3,3 +3,46 @@
     background-color: #FFE53B;
     background: linear-gradient(147deg, #FFE53B 0%, #FF2525 41%, #030202 90%);
   }
+
+  .imcInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .imcTitle {
+    font-size: 2em;
+    margin-bottom: 60px;
+  }
+  .inputTaille, .inputPoids{
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+  }
+  
+  .taille {
+    font-size: 30px;
+    margin-right: 50px;
+  }
+  .poids {
+    font-size: 30px;
+    margin-right: 50px;
+  }
+  .inputImc {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+  .imcFinal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .imcResult {
+    font-size: 30px;
+  }
+  .imcImg {
+    width: 200px;
+    height: 250px;
+    clip-path: ellipse(50% 50%);
+  }
+  

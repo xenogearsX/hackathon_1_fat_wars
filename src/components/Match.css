@@ -1,8 +1,14 @@
-
-
-/* 
-const cheveux = (array =>array.filter(perso=>perso.cheveux===selectcheveux.value))
-const poids = (array => array.filter(perso=>perso.poids < 100))
-cheveux(poids(taille()))
-.filter((perso)=>perso.height>180) */
-
+.filter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Starjout', arial;
+    font-size: 15px;
+    
+}
+.menu-select {
+    padding: 6px;
+    margin: 10px;
+    font-family: 'Starjout';
+    font-weight: 100;
+}

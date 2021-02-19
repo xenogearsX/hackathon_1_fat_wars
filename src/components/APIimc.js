@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import "./APIimc.css";
+import Nav from "./Nav";
 
 class APIimc extends React.Component {
   state = {
@@ -130,23 +132,36 @@ class APIimc extends React.Component {
 
   render() {
     return (
-      <div>
-        <label>Taille en cm</label>
-        <input
-          type="number"
-          name="taille"
-          value={this.state.userTaille}
-          onChange={this.handleTaille}
-        />
-        <label>Poids</label>
-        <input
-          type="number"
-          name="poids"
-          value={this.state.userPoids}
-          onChange={this.handlePoids}
-        />
-        <p>IMC : {this.state.IMC}</p>
-        {this.state.random? <div><img src={this.state.random.image} alt={this.state.random.name}/><p>{this.state.random.name}</p></div> : null}
+      <div className="imcPage">
+        <Nav />
+        <h1 className="imcTitle">Toi-même tu connaîtras</h1>
+        <div className="imcInput">
+          <div className="imcTaille">
+            <label className="taille">Taille en cm</label>
+            <input
+            className="inputTaille"
+            type="number"
+            name="taille"
+            value={this.state.userTaille}
+            onChange={this.handleTaille}
+            />
+          </div>
+          <div className="imcTaille">
+            <label className="poids">Poids</label>
+            <input
+            className="inputPoids"
+            type="number"
+            name="poids"
+            value={this.state.userPoids}
+            onChange={this.handlePoids}
+            />
+          </div>
+        </div>
+          <div className="imcFinal">
+            {this.state.IMC? <p className="imcResult">Résultat: tu es</p>:null}
+            {this.state.random? <div><img className="imcImg" src={this.state.random.image} alt={this.state.random.name}/><p>{this.state.random.name}</p></div> : null}
+            
+          </div>
       </div>
     );
   }

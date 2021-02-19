@@ -1,6 +1,8 @@
 import React from "react";
+import abdou from '../abdousidious.jpg'
+import Nav from "./Nav";
 
-import abdou from '../darkabdou.jpg'
+import "./Timer.css"
 
 class Timer extends React.Component {
   state = {
@@ -31,34 +33,35 @@ class Timer extends React.Component {
   render() {
     return (
       <div className="timer">
+        <Nav />
         <div id="bip" className="compteur">
           {this.state.counter1 === 0
-            ? <div><img src={abdou} /><h1>You did it !</h1></div>
+            ? <div><img src={abdou} /><h1>Réussi tu as !</h1></div>
             : this.state.counter1
             ? this.state.counter1 >= 60
               ? Math.trunc(this.state.counter1 / 60) +
                 " : " +
                 (this.state.counter1 % 60 < 10
                   ? `0${this.state.counter1 % 60}`
-                  : this.state.counter1 % 60) + " of hard work remaining"
-              : `Train hard for ${this.state.counter1} seconds.`
-            : "Click to start"}
+                  : this.state.counter1 % 60) + " d'entraînement"
+              : `${this.state.counter1} secondes avant la pause.`
+            : "Bouton tu cliqueras"}
         </div>
-        <button className="start" onClick={this.timer1}>
-          Start training
+        <button className="button" onClick={this.timer1}>
+          Exercice tu commenceras
         </button>
         <div className="break">
           {this.state.counter2 === 0
-            ? "Break is over. Please click on start training again !"
+            ? "Finis est la pause. Bouton tu recliqueras !"
             : this.state.counter2
             ? this.state.counter2 >= 60
               ? Math.trunc(this.state.counter2 / 60) +
                 " : " +
                 (this.state.counter2 % 60 < 10
                   ? `0${this.state.counter2 % 60}`
-                  : this.state.counter2 % 60)+" breaktime."
-              : `Break for ${this.state.counter2} seconds.`
-            : "Train first before break time !"}
+                  : this.state.counter2 % 60)+" de pause tu as."
+              : `pause de ${this.state.counter2} secondes tu as.`
+            : "Sport avant la pause tu feras  !"}
         </div>
       </div>
     );
