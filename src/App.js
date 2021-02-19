@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <link href="https://fr.allfont.net/allfont.css?fonts=star-jedi" rel="stylesheet" type="text/css" />
       <Switch>
         <Route exact path='/' component={Home}/>
       </Switch>
