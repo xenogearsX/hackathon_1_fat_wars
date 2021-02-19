@@ -1,0 +1,12 @@
+.details {
+    width: 500px;
+    border: 2px solid  yellow;
+    font-family: 'Starjout', arial;
+    font-weight: 100;
+    height: 830px;
+    border-radius: 5px;
+    box-shadow: cornsilk;
+}
+.details img {
+border-radius: 15px;
+}

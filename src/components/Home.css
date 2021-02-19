@@ -1,0 +1,19 @@
+@font-face {   font-family: 'Starjout';   src: local('font-family: 'Starjout', arial;'), url(../Asset/Starjout.ttf) format('woff'); }
+.button {
+    font-weight: bold;
+    font-size: 1em;
+    font-family: 'Starjout', arial;
+    padding: 1rem 2rem;
+    background: #FFE53B;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.2s ease-in;
+    text-align: center;
+}
+.Home-title{
+    font-family: 'Starjout', arial;
+    color: yellow;
+    padding-bottom: 30px;
+    font-weight: 100;
+}

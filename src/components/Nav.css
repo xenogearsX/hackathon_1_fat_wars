@@ -1,0 +1,34 @@
+@font-face {   font-family: 'Starjout';   src: local('Starjout'), url(../Asset/Starjout.ttf) format('woff'); }
+
+ul{
+    display: flex;
+	justify-content: center;
+
+	list-style-type: none;
+	margin: 0px;
+	padding: 12px;
+    background-image: linear-gradient(147deg, #c5ae19 20%, #FF2525 41%, #030202 90%);
+    font-family: 'Starjout', arial;
+}
+
+
+li .nav {
+  height: 100px;
+  display: flex;
+  justify-content: row;
+  
+}
+.nav{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    text-decoration: none;
+    color: #eee4e4;
+    font-size: 20px;
+}
+
+.navbar {
+    width:98.3vw;
+}
